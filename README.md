@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Instructions
 
-Things you may want to cover:
+To set up a new project based on this docker config:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Create a new project directory.
+* Pull the skeleton `git clone -o "docker-rails-api" https://github.com/novomancy/docker-rails-api.git project_directory`
+* Create new remote for the project on github
+* Add new origin: `git remote add origin https://github.com/change_me/new_project.git`
+* Push the new project: `git push origin master` (You may need to pull from origin first)
+* Remove the old remote `git remote rm docker-rails-api`
