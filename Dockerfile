@@ -17,9 +17,9 @@ WORKDIR $RAILS_ROOT
 # Use the Gemfiles as Docker cache markers. Always bundle before copying app src.
 # (the src likely changed and we don't want to invalidate Docker's cache too early)
 # http://ilikestuffblog.com/2014/01/06/how-to-skip-bundle-install-when-deploying-a-rails-app-to-docker/
-ADD Gemfile /baton/Gemfile
+ADD Gemfile $RAILS_ROOT/Gemfile
  
-ADD Gemfile.lock /baton/Gemfile.lock
+ADD Gemfile.lock $RAILS_ROOT/Gemfile.lock
  
 # Prevent bundler warnings; ensure that the bundler version executed is >= that which created Gemfile.lock
 RUN gem install bundler
@@ -28,4 +28,4 @@ RUN gem install bundler
 RUN bundle install
  
 # Copy the Rails application into place
-ADD . /baton
+ADD . $RAILS_ROOT
